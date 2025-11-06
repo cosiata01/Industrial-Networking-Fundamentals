@@ -1,0 +1,52 @@
+# 02 – OSI Model and Communication Layers  
+*(Español abajo / Spanish below)*  
+
+---
+
+## 🇬🇧 English Summary  
+
+The **OSI (Open Systems Interconnection)** model is the foundation for understanding how communication occurs between devices in both IT and OT environments.  
+In industrial networking, it provides a framework for visualizing where each **industrial protocol** operates and how data flows from sensors to supervisory systems.  
+
+### 🧩 OSI Layers in Industrial Contexts
+1. **Physical Layer:** Cables, connectors, and electrical signals. (e.g., RS-485, Ethernet)  
+2. **Data Link Layer:** Network access control and error detection. (e.g., Profinet, Ethernet/IP)  
+3. **Network Layer:** Routing and addressing. (e.g., IP addressing in Industrial Ethernet)  
+4. **Transport Layer:** Ensures reliable communication. (e.g., TCP/UDP)  
+5. **Session Layer:** Manages connections between applications.  
+6. **Presentation Layer:** Data formatting and encryption.  
+7. **Application Layer:** Industrial protocols such as Modbus, OPC UA, and DNP3.  
+
+### 🔑 Key Takeaways
+- The OSI model helps map industrial protocols to their functional layer.  
+- In OT, **real-time and deterministic communication** is often prioritized over bandwidth.  
+- Understanding which layer a problem belongs to simplifies troubleshooting.  
+
+---
+
+## 🇪🇸 Resumen en español  
+
+El modelo **OSI (Interconexión de Sistemas Abiertos)** es la base para comprender cómo se comunican los dispositivos tanto en entornos IT como OT.  
+En las redes industriales, sirve como marco para visualizar en qué **capa** opera cada protocolo y cómo fluye la información desde los sensores hasta los sistemas de supervisión.  
+
+### 🧩 Capas OSI en contextos industriales
+1. **Capa física:** Cables, conectores y señales eléctricas. (Ej.: RS-485, Ethernet)  
+2. **Capa de enlace:** Control de acceso a la red y detección de errores. (Ej.: Profinet, Ethernet/IP)  
+3. **Capa de red:** Enrutamiento y direccionamiento. (Ej.: direccionamiento IP en Ethernet industrial)  
+4. **Capa de transporte:** Garantiza la comunicación confiable. (Ej.: TCP/UDP)  
+5. **Capa de sesión:** Gestiona las conexiones entre aplicaciones.  
+6. **Capa de presentación:** Formato de datos y cifrado.  
+7. **Capa de aplicación:** Protocolos industriales como Modbus, OPC UA y DNP3.  
+
+### 🔑 Puntos clave
+- El modelo OSI ayuda a ubicar cada protocolo industrial en su capa funcional.  
+- En OT, la **comunicación determinista y en tiempo real** es prioritaria sobre el ancho de banda.  
+- Entender a qué capa pertenece un problema facilita el diagnóstico.  
+
+---
+
+## 💬 Personal Reflection / Reflexión personal  
+
+> 🇬🇧 I used to think the OSI model was only theoretical, but in industrial networking it suddenly becomes practical. Now I can connect each layer to real systems — from sensors (Physical Layer) to SCADA (Application Layer) — and I see how each level can introduce vulnerabilities if not well designed.  
+
+> 🇪🇸 Antes pensaba que el modelo OSI era algo puramente teórico, pero en las redes industriales se vuelve muy práctico. Ahora puedo relacionar cada capa con sistemas reales — desde sensores (capa física) hasta SCADA (capa de aplicación) — y entiendo cómo cada nivel puede introducir vulnerabilidades si no está bien diseñado.  
