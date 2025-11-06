@@ -1,64 +1,78 @@
-# 05 – Industrial Ethernet and VLAN Segmentation  
+# 06 – OT Security Basics and Best Practices  
 *(Español abajo / Spanish below)*  
 
 ---
 
 ## 🇬🇧 English Summary  
 
-**Industrial Ethernet** has become the backbone of modern OT networks, replacing older serial communication methods.  
-It offers higher bandwidth, standardized infrastructure, and integration with IT systems — but it also introduces cybersecurity challenges.
+As industrial systems become more connected, **cybersecurity in OT (Operational Technology)** has become a critical discipline.  
+Unlike IT, where confidentiality is the top priority, OT security focuses on **availability and integrity** — ensuring that industrial processes continue safely and reliably.
 
-### ⚙️ Industrial Ethernet Basics
-- Uses standard Ethernet technologies (IEEE 802.3) with ruggedized hardware.  
-- Enables deterministic communication through time-sensitive networking (TSN) or prioritized traffic (QoS).  
-- Supports **Industrial protocols** like Profinet, Ethernet/IP, and Modbus TCP.  
-- Common speeds: 100 Mbps, 1 Gbps (sometimes 10 Gbps in high-end systems).  
+### 🛡️ Core Principles of OT Security
+- **Availability first:** Downtime can stop production or endanger safety.  
+- **Defense in Depth:** Layered protection using firewalls, segmentation, monitoring, and access control.  
+- **Zones and Conduits:** Divide the network into security zones (control, DMZ, enterprise) and manage data flows between them.  
+- **Least Privilege:** Users and devices should only have the access they truly need.  
+- **Change Management:** Any modification to PLC logic, firmware, or configuration must be tracked and authorized.  
 
-### 🔒 VLANs (Virtual Local Area Networks)
-- VLANs logically segment a single physical network into multiple isolated zones.  
-- Improve performance, manageability, and security by separating traffic types (e.g., control vs supervision).  
-- Common practice in OT: assign different VLANs for PLCs, HMIs, SCADA servers, and engineering stations.  
-- Managed switches enable VLAN configuration and inter-VLAN routing control.  
+### 🚨 Common Risks
+- Unpatched or outdated PLCs and HMIs.  
+- Flat networks without segmentation (easy lateral movement).  
+- Remote connections without secure authentication (VPN or MFA).  
+- Weak or default passwords in industrial devices.  
+
+### 🧰 Recommended Practices
+- Use **managed switches** with VLANs and port security.  
+- Implement **firewalls** between IT, DMZ, and OT zones.  
+- Monitor traffic with **IDS/IPS tools** adapted for industrial protocols (e.g., Zeek, Snort).  
+- Back up PLC programs and SCADA configurations regularly.  
 
 📊 **Suggested Diagram:**  
-In `/diagrams/vlan_segmentation_example.png`, illustrate VLANs separating traffic between control, SCADA, and IT zones, showing a firewall or router between them.  
+In `/diagrams/ot_defense_in_depth.png`, represent layered security: outer (IT) → DMZ → OT → control devices.
 
 ### 🔑 Key Takeaways
-- VLANs enhance both performance and security in industrial networks.  
-- Proper VLAN design minimizes broadcast storms and limits lateral movement during attacks.  
-- Ethernet in OT must balance performance with determinism and reliability.  
+- OT security prioritizes **availability** and **safety**.  
+- Layered security reduces risk of cascading failures.  
+- The best defense starts with knowing your network and controlling access.  
 
 ---
 
 ## 🇪🇸 Resumen en español  
 
-El **Ethernet industrial** se ha convertido en la columna vertebral de las redes OT modernas, reemplazando los antiguos métodos de comunicación serie.  
-Ofrece mayor ancho de banda, infraestructura estandarizada e integración con sistemas IT — pero también introduce nuevos retos de ciberseguridad.  
+A medida que los sistemas industriales se vuelven más conectados, la **ciberseguridad en OT (tecnología operacional)** se ha convertido en una disciplina crítica.  
+A diferencia del mundo IT, donde la prioridad es la **confidencialidad**, en OT la seguridad se centra en la **disponibilidad y la integridad**, garantizando que los procesos industriales sigan funcionando de forma segura y confiable.  
 
-### ⚙️ Fundamentos de Ethernet industrial
-- Utiliza tecnologías Ethernet estándar (IEEE 802.3) con hardware reforzado.  
-- Permite comunicación determinista mediante **TSN (Time-Sensitive Networking)** o priorización de tráfico (**QoS**).  
-- Soporta **protocolos industriales** como Profinet, Ethernet/IP y Modbus TCP.  
-- Velocidades comunes: 100 Mbps, 1 Gbps (hasta 10 Gbps en sistemas avanzados).  
+### 🛡️ Principios fundamentales de la seguridad OT
+- **Disponibilidad ante todo:** Una caída puede detener la producción o poner en riesgo la seguridad.  
+- **Defensa en profundidad:** Protección por capas mediante firewalls, segmentación, monitoreo y control de acceso.  
+- **Zonas y conductos:** Dividir la red en zonas de seguridad (control, DMZ, empresa) y gestionar los flujos entre ellas.  
+- **Mínimo privilegio:** Usuarios y dispositivos solo deben tener el acceso necesario.  
+- **Gestión de cambios:** Toda modificación en PLC, firmware o configuración debe registrarse y aprobarse.  
 
-### 🔒 VLANs (Redes de área local virtuales)
-- Las VLAN segmentan lógicamente una red física en varias zonas aisladas.  
-- Mejoran el rendimiento, la gestión y la seguridad al separar tipos de tráfico (por ejemplo, control y supervisión).  
-- En entornos OT es común asignar VLANs distintas para PLC, HMI, servidores SCADA y estaciones de ingeniería.  
-- Los switches gestionados permiten configurar VLANs y controlar el enrutamiento entre ellas.  
+### 🚨 Riesgos comunes
+- PLC o HMI sin actualizar o con firmware obsoleto.  
+- Redes planas sin segmentación (movimiento lateral fácil).  
+- Conexiones remotas sin autenticación segura (VPN o MFA).  
+- Contraseñas débiles o por defecto en dispositivos industriales.  
+
+### 🧰 Buenas prácticas recomendadas
+- Usar **switches gestionados** con VLANs y seguridad por puerto.  
+- Implementar **firewalls** entre zonas IT, DMZ y OT.  
+- Monitorear el tráfico con herramientas **IDS/IPS** adaptadas a protocolos industriales (Zeek, Snort).  
+- Realizar copias de seguridad periódicas de programas de PLC y configuraciones SCADA.  
 
 📊 **Diagrama sugerido:**  
-En `/diagrams/vlan_segmentation_example.png`, muestra VLANs que separen tráfico entre zonas de control, SCADA e IT, con un firewall o router entre ellas.  
+En `/diagrams/ot_defense_in_depth.png`, muestra la defensa en capas: exterior (IT) → DMZ → OT → dispositivos de control.
 
 ### 🔑 Puntos clave
-- Las VLAN mejoran tanto el rendimiento como la seguridad de las redes industriales.  
-- Un diseño adecuado de VLAN reduce tormentas de broadcast y limita el movimiento lateral durante un ataque.  
-- Ethernet en OT debe equilibrar rendimiento con comunicación determinista y fiabilidad.  
+- La seguridad OT prioriza la **disponibilidad** y la **seguridad operacional**.  
+- Las defensas en capas reducen el riesgo de fallos en cascada.  
+- La mejor defensa comienza con conocer tu red y controlar el acceso.  
 
 ---
 
 ## 💬 Personal Reflection / Reflexión personal  
 
-> 🇬🇧 Understanding VLANs was a turning point for me. I used to see networks as flat systems, but now I understand how segmentation can prevent one compromised device from affecting others. It’s one of the simplest yet most powerful defenses in OT security.  
+> 🇬🇧 Learning about OT security changed my mindset completely. I realized that even small configuration errors can have real physical consequences. Implementing layered protection is not just about firewalls — it’s about designing systems that fail safely.  
 
-> 🇪🇸 Comprender las VLAN fue un punto de inflexión para mí. Antes veía las redes como sistemas planos, pero ahora entiendo cómo la segmentación puede evitar que un dispositivo comprometido afecte a los demás. Es una de las defensas más simples pero poderosas en la seguridad OT.  
+> 🇪🇸 Aprender sobre seguridad OT cambió completamente mi forma de pensar. Entendí que incluso pequeños errores de configuración pueden tener consecuencias físicas reales. Implementar protección en capas no se trata solo de firewalls, sino de diseñar sistemas que fallen de forma segura.  
